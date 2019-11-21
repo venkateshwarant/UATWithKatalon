@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Hello world test case</name>
+   <tag>hello world</tag>
+   <comment></comment>
+   <testCaseGuid>3a12f875-b484-4e2f-be29-042e59e2be19</testCaseGuid>
+</TestCaseEntity>
