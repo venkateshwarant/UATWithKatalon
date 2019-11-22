@@ -266,3 +266,7 @@ Now once you put a new commit to the gitlab repository, you can see that the pip
 ![Downloaded Katalon Studio](/images/33.png)
 
 ![Downloaded Katalon Studio](/images/34.png)
+
+The execution results will be autopushed to https://analytics.katalon.com/ by katalon
+
+![Downloaded Katalon Studio](/images/35.png)
