@@ -165,3 +165,50 @@ WebUI.closeBrowser();
 
 ![Downloaded Katalon Studio](/images/12.png)
 
+
+# Register a runner for the repository
+ 
+1. First of all, you need to execute the following command:
+```
+sudo gitlab-runner register
+```
+
+2. Then enter the requested information as follows:
+
+For GitLab instance URL enter:
+```
+http://192.168.33.9/gitlab/
+```
+
+For the gitlab-ci token enter the generated token.
+```
+Example: 85y84QhgbyaqWo38b7qg
+```
+
+For a description for the runner enter:
+```
+shell
+```
+
+For the gitlab-ci tags for this runner enter:
+```
+shell
+```
+
+For the executor enter:
+```
+shell
+```
+
+For the Docker image (eg. ruby:2.1) enter:
+```
+alpine:latest
+```
+
+Restart the runner:
+
+```
+sudo gitlab-runner restart
+```
+
+Finally, in GitLab change the configuration of the runner to accept jobs without TAGS.
