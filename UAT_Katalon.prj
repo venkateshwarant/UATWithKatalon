@@ -6,6 +6,7 @@
    <UUID>d8ed85a8-d5b2-4277-a7c0-ea6511451bfc</UUID>
    <migratedVersion>5.9.0</migratedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
+   <projectFileLocation>/Users/venkat/UAT_Katalon/UAT_Katalon.prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>

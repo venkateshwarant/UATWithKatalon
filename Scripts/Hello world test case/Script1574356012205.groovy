@@ -15,6 +15,6 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser("http://127.0.0.1:3000/Tutorial1/helloworld.html")
+WebUI.openBrowser("http://192.168.33.10/helloworld.html");
 WebUI.verifyElementText(findTestObject('Object Repository/title'), "Hello world!");
 WebUI.closeBrowser();
