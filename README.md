@@ -17,17 +17,32 @@ Follow instructions in https://github.com/acapozucca/devops/tree/master/pipeline
 
 Here we are going to test the hello world web page developed in https://github.com/venkateshwarant/DemoDynamicServer
 
-1. Clone that repository and open it in the eclipse. Right click on the repository and click export > Select war inside the web and click ok.
+1. Clone that repository and open it in the eclipse. note that we have added following lines in Vagrantfile
 
-![Downloaded Katalon Studio](/images/15.png)
+```
+  config.vm.box = "ubuntu/xenial64"
+  config.vm.hostname = "DemoDynamicServer"
+  config.vm.synced_folder "./data1", "/vagrant_data"
+  config.vm.network "public_network", ip: "192.168.33.10"
+  
+  config.vm.provision "shell", inline: <<-SHELL
+     apt-get update
+     apt-get install -y apache2
+     sudo cp /vagrant_data/helloworld.html /var/www/html/helloworld.html
+  SHELL
+```
 
-![Downloaded Katalon Studio](/images/16.png)
+2. Follow tutorial in https://docs.google.com/document/d/1N3C2pTh07zqisE98Ftp8_5eoDXXM2o8KlswE9XHeO3I/edit#heading=h.jtjkrfh88jwn to install Vagrant in your machine.
 
-2. Select the destination for the war file which you have to generate.
+3. After installing vagrant, navigate to the location of Vagrantfile and run the following command.
 
-![Downloaded Katalon Studio](/images/17.png)
+```
+vagrant up
+```
 
-3. The war file is generated in the specified location.
+4. Check if you can access http://192.168.33.10/helloworld.html from your machine. Note that we have configured "192.168.33.10" as VM's public network IP  in Vagrantfile, if you have to change the server ip, it is just enough to change the Vagrantfile and provision the vagrant again.
+
+![Downloaded Katalon Studio](/images/18.png)
 
 
 ## Create a project repository in your integration server
