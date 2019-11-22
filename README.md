@@ -211,4 +211,8 @@ Restart the runner:
 sudo gitlab-runner restart
 ```
 
-Finally, in GitLab change the configuration of the runner to accept jobs without TAGS.
+3. Finally, in GitLab change the configuration of the runner to accept jobs without TAGS.
+
+4. Now you can see our runner inside our gitlab server
+
+![Downloaded Katalon Studio](/images/31.png)
