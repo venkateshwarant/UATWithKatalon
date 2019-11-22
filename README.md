@@ -17,7 +17,7 @@ Follow instructions in https://github.com/acapozucca/devops/tree/master/pipeline
 
 Here we are going to test the hello world web page developed in https://github.com/venkateshwarant/DemoDynamicServer
 
-1. Clone that repository and open it in the eclipse. note that we have added following lines in Vagrantfile
+1. Clone that repository. Note that we have added following lines in Vagrantfile
 
 ```
   config.vm.box = "ubuntu/xenial64"
@@ -102,3 +102,35 @@ It's a good practice to follow the page object model to create user acceptance t
 2. Give a title to the object an give a description
 
 ![Downloaded Katalon Studio](/images/14.png)
+
+# Creating test case
+
+1. Right click "Test Cases" > New > Test Case
+
+![Downloaded Katalon Studio](/images/19.png)
+
+2. Give proper test case name and description
+
+![Downloaded Katalon Studio](/images/20.png)
+
+3. Click on Script as shown in the image
+
+![Downloaded Katalon Studio](/images/21.png)
+
+4. A script view will be opened in the katalon studio. All the test cases are written in groovy in katalon.
+
+5. The code to open a url, and check for the text at a particular field and close the browser are below.
+
+```
+WebUI.openBrowser("http://192.168.33.10/helloworld.html");
+WebUI.verifyElementText(findTestObject('Object Repository/title'), "Hello world!");
+WebUI.closeBrowser();
+```
+
+6. Click on Run button to run the automation via Katalon Studio
+
+![Downloaded Katalon Studio](/images/23.png)
+
+7. Results of the test run will be displayed in the UI
+
+![Downloaded Katalon Studio](/images/24.png)
