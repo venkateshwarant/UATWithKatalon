@@ -1,0 +1,9 @@
+run_katalon_test_suite:
+      tags:
+        - shell
+      script:
+        - katalon -noSplash  -runMode=console -consoleLog -projectPath=
+          "/Users/venkat/Katalon Studio/UAT_Katalon/UAT_Katalon.prj" -retry=0
+          -testSuitePath="Test Suites/HelloWorldTestSuite" -executionProfile=
+          "default" -browserType="Chrome (headless)"
+
