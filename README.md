@@ -12,6 +12,32 @@ For writing user acceptance tests with katalon, it is good to start with katalon
 
 ## Create Integration server
 Follow instructions in https://github.com/acapozucca/devops/tree/master/pipeline/s2-automate-build and create an integration server.
+add following script inside Vagrantfile shell
+This includes
+1. Downloading Katalon and giving rwx permission to gitlab-runner user & gitlab-runner group.
+2. downloaing chrome stable version in the vm
+```
+sudo apt-get install --yes python
+sudo apt-get install openjdk-8-jre
+set -xe
+echo "Install Katalon"
+version="7.0.10"
+directory=$version
+package=Katalon_Studio_Engine_Linux_64-$version.tar.gz
+unzipped_directory=Katalon_Studio_Engine_Linux_64-$version
+wget -O $package https://github.com/katalon-studio/katalon-studio/releases/download/v$version/Katalon_Studio_Engine_Linux_64-$version.tar.gz
+ls
+tar -xvzf $package -C $unzipped_directory
+ls
+rm $package
+sudo chown -R "gitlab-runner" $unzipped_directory
+sudo chgrp -R "gitlab-runner" $unzipped_directory
+echo $unzipped_directory
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt-get install fonts-liberation
+sudo apt-get -f install
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+```
 
 ## Hosting our product in a server
 
@@ -216,3 +242,27 @@ sudo gitlab-runner restart
 4. Now you can see our runner inside our gitlab server
 
 ![Downloaded Katalon Studio](/images/31.png)
+
+# Creating GitLab CI
+
+1. Create file named .gitlab-ci.yml at the root of the repository.
+
+2. Add the following lines into the file:
+NOTE: Before running the pipeline ensure that you put your Katalon RE license under /home/gitlab-runner/.katalon/license
+
+```
+run_katalon_test_suite:
+      tags:
+        - shell
+      script:
+        -  export DISPLAY=:0
+        - /home/vagrant/Katalon_Studio_Engine_Linux_64-7.0.10/katalonc -noSplash -runMode=console -projectPath="/home/gitlab-runner/builds/nbb5yDmB/0/gitlab/venkateshwaran/uat_katalon/UAT_Katalon.prj"  -retry=0 -testSuitePath="Test Suites/HelloWorldTestSuite" -executionProfile="default" -browserType="Chrome (headless)" -apiKey="1dd161fc-ec7c-4215-a9f4-2611752d646e" --config -webui.autoUpdateDrivers=true
+```
+
+Now once you put a new commit to the gitlab repository, you can see that the pipeline is sucessfully invoked and all tests are completed sucessfully
+
+![Downloaded Katalon Studio](/images/32.png)
+
+![Downloaded Katalon Studio](/images/33.png)
+
+![Downloaded Katalon Studio](/images/34.png)
