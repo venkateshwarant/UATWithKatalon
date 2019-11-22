@@ -1,4 +1,4 @@
-# UATWithKatalon
+# UAT With Katalon
 UAT using Katalon
 
 # Prerequiste
