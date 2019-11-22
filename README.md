@@ -134,3 +134,30 @@ WebUI.closeBrowser();
 7. Results of the test run will be displayed in the UI
 
 ![Downloaded Katalon Studio](/images/24.png)
+
+# Creating test suite
+
+1. Right click on "Test Suites" > new > Test Suite
+
+![Downloaded Katalon Studio](/images/25.png)
+
+2. Click add icon
+
+![Downloaded Katalon Studio](/images/26.png)
+
+3. Select test cases, and click add and continue
+
+![Downloaded Katalon Studio](/images/27.png)
+
+4. See that your added test cases are added in your test suite
+
+![Downloaded Katalon Studio](/images/28.png)
+
+5. To run a test suite. click run icon
+
+![Downloaded Katalon Studio](/images/29.png)
+
+6. You can see the results of test in the UI
+
+![Downloaded Katalon Studio](/images/30.png)
+
