@@ -13,6 +13,12 @@ For writing user acceptance tests with katalon, it is good to start with katalon
 ## Create Integration server
 Follow instructions in https://github.com/acapozucca/devops/tree/master/pipeline/s2-automate-build and create an integration server.
 
+## Hosting our product in a server
+
+Here we are going to test the static hello world web page developed in https://github.com/venkateshwarant/UAT
+
+
+
 ## Create a project repository in your integration server
 
 1. Goto projects > your projects > new project
