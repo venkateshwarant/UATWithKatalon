@@ -161,3 +161,7 @@ WebUI.closeBrowser();
 
 ![Downloaded Katalon Studio](/images/30.png)
 
+7. Push all the code to the repository created in our gitlab server.
+
+![Downloaded Katalon Studio](/images/12.png)
+
