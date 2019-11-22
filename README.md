@@ -15,8 +15,19 @@ Follow instructions in https://github.com/acapozucca/devops/tree/master/pipeline
 
 ## Hosting our product in a server
 
-Here we are going to test the static hello world web page developed in https://github.com/venkateshwarant/UAT
+Here we are going to test the hello world web page developed in https://github.com/venkateshwarant/DemoDynamicServer
 
+1. Clone that repository and open it in the eclipse. Right click on the repository and click export > Select war inside the web and click ok.
+
+![Downloaded Katalon Studio](/images/15.png)
+
+![Downloaded Katalon Studio](/images/16.png)
+
+2. Select the destination for the war file which you have to generate.
+
+![Downloaded Katalon Studio](/images/17.png)
+
+3. The war file is generated in the specified location.
 
 
 ## Create a project repository in your integration server
