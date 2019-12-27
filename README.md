@@ -2,6 +2,10 @@
 UAT using Katalon
 
 # Prerequiste
+## Get the license
+* See to the katalon pricing in https://www.katalon.com/pricing/
+* We need the Katalon runtime engine license to integrate the katalon test cases to the pipeline
+
 ## Installing Katalon studio
 For writing user acceptance tests with katalon, it is good to start with katalon studio. Download and install it from https://www.katalon.com/
 
